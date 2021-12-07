@@ -12,4 +12,4 @@ I very much doubt that it's going to be realistic to get through all 25 days lik
 
 ## Why
 
-A sort of vague ennui, mostly.
+"One must imagine Sisyphus happy"
