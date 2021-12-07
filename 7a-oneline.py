@@ -1,6 +1,7 @@
 from aocd import get_data
-data = list(map(int,get_data(day=7,year=2021).split(",")))
+data = get_data(day=7,year=2021)
+#data = list(map(int,get_data(day=7,year=2021).split(",")))
 
-print(min(sum(abs(j-i)
-              for j in data)
-          for i in range(min(data), max(data)+1)))
+print((nums := list(map(int,data.split(",")))) and
+      min(sum(abs(j-i) for j in nums)
+          for i in range(min(nums), max(nums)+1)))
