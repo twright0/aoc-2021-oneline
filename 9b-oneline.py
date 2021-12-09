@@ -14,8 +14,7 @@ print(
     (
         reduce(lambda x,y: x*y,
                list(sorted(list(map(get_size, reduce(lambda state, pt: (
-            ((v := pt[1]) or True) and ((i := pt[0][0]) or True) and ((j := pt[0][1]) or True) and
-            (state + ([(i,j)] if all(m.get((i+di,j+dj),biggest) > v for di, dj in ((-1,0),(1,0),(0,1),(0,-1))) else []))
-        ),m.items(),[])
-    ))))[-3:]))
+                   ((v := pt[1]) or True) and ((i := pt[0][0]) or True) and ((j := pt[0][1]) or True) and
+                   (state + ([(i,j)] if all(m.get((i+di,j+dj),biggest) > v for di, dj in ((-1,0),(1,0),(0,1),(0,-1))) else []))
+               ),m.items(),[])))))[-3:]))
 )
