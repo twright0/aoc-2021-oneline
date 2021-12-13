@@ -10,13 +10,8 @@ print((pts := reduce(lambda last_pts, fold: (
               (x,(y if y < int(fold[1]) else y-2*(y-int(fold[1]))))
               for x,y in last_pts]))
       ), data[1].split("\n"), [tuple(map(int, pt.split(","))) for pt in data[0].split("\n")])) and
-      ((min_j := min(i for i,_ in pts)) or True) and
-      ((min_i := min(j for _,j in pts)) or True) and
-      ((max_j := max(i for i,_ in pts)) or True) and
-      ((max_i := max(j for _,j in pts)) or True) and
       (grid := {(i,j): "X" for j,i in pts}) and
-
       "\n".join(("".join(grid.get((i,j)," ")
-                         for j in range(min_j,max_j+1)))
-                for i in range(min_i,max_i+1))
+                         for j in range(min(i for i,_ in pts),max(i for i,_ in pts)+1)))
+                for i in range(min(j for _,j in pts),max(j for _,j in pts)+1))
 )
